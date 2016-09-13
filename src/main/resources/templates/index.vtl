@@ -1,0 +1,20 @@
+<h1>Place list!</h1>
+
+#if ($places)
+  <ul>
+    #foreach ($place in $places)
+      <li>$place.getPlaceName()</li>
+    #end
+  </ul>
+#else
+  <p>You've not been anywhere!</p>
+#end
+
+<p>Add a new Place:</p>
+
+<form action="/places" method="post">
+  <label for="placename">Place Name</label>
+  <input id="placename" name="placename" type="text">
+
+  <button type="submit" class="btn btn-default">Add place</button>
+</form>
